@@ -5,23 +5,6 @@
 #
 # bin/packwerk update-deprecations app/packages/docs
 ---
-app/packages/github_fetchers:
-  "::GitBranchnameGenerator":
-    violations:
-    - dependency
-    files:
-    - app/packages/docs/controllers/doc_methods_controller.rb
-  "::GithubUrlFromBasePathLine":
-    violations:
-    - dependency
-    files:
-    - app/packages/docs/models/doc_method.rb
-app/packages/rails:
-  "::ApplicationController":
-    violations:
-    - dependency
-    files:
-    - app/packages/docs/controllers/doc_methods_controller.rb
 app/packages/repos:
   "::Repo":
     violations:
@@ -35,9 +18,3 @@ app/packages/repos:
     files:
     - app/packages/docs/controllers/doc_methods_controller.rb
     - app/packages/docs/models/doc_assignment.rb
-app/packages/users:
-  "::UserMailer":
-    violations:
-    - dependency
-    files:
-    - app/packages/docs/models/doc_mailer_maker.rb

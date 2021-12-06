@@ -5,23 +5,6 @@
 #
 # bin/packwerk update-deprecations app/packages/issues
 ---
-app/packages/github_fetchers:
-  "::GithubFetcher::Issue":
-    violations:
-    - dependency
-    files:
-    - app/packages/issues/models/issue.rb
-  "::GithubFetcher::IssueComments":
-    violations:
-    - dependency
-    files:
-    - app/packages/issues/models/issue.rb
-app/packages/rails:
-  "::ApplicationController":
-    violations:
-    - dependency
-    files:
-    - app/packages/issues/controllers/issue_assignments_controller.rb
 app/packages/repos:
   "::Repo":
     violations:

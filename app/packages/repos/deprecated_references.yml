@@ -22,22 +22,6 @@ app/packages/docs:
     files:
     - app/packages/repos/models/repo.rb
     - app/packages/repos/models/repo_subscription.rb
-app/packages/github_fetchers:
-  "::GithubFetcher::CommitSha":
-    violations:
-    - dependency
-    files:
-    - app/packages/repos/models/repo.rb
-  "::GithubFetcher::Issues":
-    violations:
-    - dependency
-    files:
-    - app/packages/repos/models/repo.rb
-  "::GithubFetcher::Repo":
-    violations:
-    - dependency
-    files:
-    - app/packages/repos/models/repo.rb
 app/packages/issues:
   "::Issue":
     violations:
@@ -56,22 +40,6 @@ app/packages/issues:
     - dependency
     files:
     - app/packages/repos/models/repo_subscription.rb
-app/packages/rails:
-  "::ApplicationController":
-    violations:
-    - dependency
-    files:
-    - app/packages/repos/controllers/badges_controller.rb
-    - app/packages/repos/controllers/pages_controller.rb
-    - app/packages/repos/controllers/repo_based_controller.rb
-    - app/packages/repos/controllers/repo_subscriptions_controller.rb
-  "::ApplicationJob":
-    violations:
-    - dependency
-    files:
-    - app/packages/repos/jobs/repo_based_job.rb
-    - app/packages/repos/jobs/send_single_triage_email_job.rb
-    - app/packages/repos/jobs/update_repo_info_job.rb
 app/packages/users:
   "::User":
     violations:
