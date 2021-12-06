@@ -18,9 +18,42 @@ load_paths:
 - app/controllers
 - app/helpers
 - app/jobs
-- app/mailers
-- app/models
 - app/services
+- app/packages
+
+# Docs
+- app/packages/docs/controllers
+- app/packages/docs/models
+- app/packages/docs/package.yml
+- app/packages/docs/views
+
+# GithubFetchers
+- app/packages/github_fetchers/models
+- app/packages/github_fetchers/package.yml
+
+# Issues
+- app/packages/issues/controllers
+- app/packages/issues/models
+- app/packages/issues/package.yml
+
+# MailBuilders
+- app/packages/mail_builders/models
+- app/packages/mail_builders/package.yml
+
+# Repos
+- app/packages/repos/controllers
+- app/packages/repos/jobs
+- app/packages/repos/lib
+- app/packages/repos/models
+- app/packages/repos/package.yml
+- app/packages/repos/views
+
+# Users
+- app/packages/users/controllers
+- app/packages/users/mailers
+- app/packages/users/models
+- app/packages/users/package.yml
+- app/packages/users/views
 
 # List of custom associations, if any
 # custom_associations:
