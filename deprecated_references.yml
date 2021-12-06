@@ -6,11 +6,6 @@
 # bin/packwerk update-deprecations .
 ---
 app/packages/docs:
-  "::DocMailerMaker":
-    violations:
-    - dependency
-    files:
-    - app/jobs/send_daily_triage_email_job.rb
   "::DocMethod":
     violations:
     - dependency
@@ -19,11 +14,6 @@ app/packages/docs:
     - lib/docs_doctor/parsers/ruby/yard.rb
     - test/jobs/parse_docs_test.rb
     - test/mailers/previews/user_preview.rb
-  "::DocMethod::NeedsDocs":
-    violations:
-    - dependency
-    files:
-    - app/views/user_mailer/send_daily_triage.md.erb
 app/packages/github_fetchers:
   "::GitBranchnameGenerator":
     violations:
@@ -45,7 +35,6 @@ app/packages/github_fetchers:
     violations:
     - dependency
     files:
-    - app/services/git_hub_authenticator.rb
     - test/unit/github_fetcher/email_test.rb
   "::GithubFetcher::EmailTest":
     violations:
@@ -206,9 +195,6 @@ app/packages/repos:
     violations:
     - dependency
     files:
-    - app/controllers/badges_controller.rb
-    - app/controllers/pages_controller.rb
-    - app/views/pages/what.html.erb
     - config/sitemap.rb
     - db/migrate/20121106072214_repo_issue_counter_cache.rb
     - db/migrate/20160827073041_update_stars_count_of_repos.rb
@@ -222,12 +208,6 @@ app/packages/repos:
     - test/unit/issue_test.rb
     - test/unit/repo_test.rb
     - test/unit/user_test.rb
-  "::RepoBasedController":
-    violations:
-    - dependency
-    files:
-    - app/controllers/api_info_controller.rb
-    - app/controllers/subscribers_controller.rb
   "::RepoSubscription":
     violations:
     - dependency
@@ -247,20 +227,38 @@ app/packages/repos:
     files:
     - test/unit/sorted_repo_collection_test.rb
 app/packages/users:
+  "::BackgroundInactiveEmailJob":
+    violations:
+    - dependency
+    files:
+    - lib/tasks/schedule.rake
   "::EmailRateLimit":
     violations:
     - dependency
     files:
-    - app/jobs/send_daily_triage_email_job.rb
     - test/unit/email_rate_limit_test.rb
+  "::GitHubAuthenticator":
+    violations:
+    - dependency
+    files:
+    - test/functional/omniauth_callbacks_controller_test.rb
+    - test/unit/git_hub_authenticator_test.rb
+  "::SendDailyTriageEmailJob":
+    violations:
+    - dependency
+    files:
+    - lib/tasks/schedule.rake
+    - test/emails/send_daily_triage_email_test.rb
+    - test/jobs/send_daily_triage_email_job_test.rb
+  "::SendDailyTriageEmailJob::DEFAULT_EMAIL_TIME_OF_DAY":
+    violations:
+    - dependency
+    files:
+    - test/jobs/send_daily_triage_email_job_test.rb
   "::User":
     violations:
     - dependency
     files:
-    - app/controllers/pages_controller.rb
-    - app/jobs/user_based_job.rb
-    - app/services/git_hub_authenticator.rb
-    - app/views/pages/what.html.erb
     - config/initializers/git_hub_bub.rb
     - db/migrate/20130803144944_update_private_attribute_of_user.rb
     - db/migrate/20140524120051_add_click_to_issue_assignment.rb
@@ -278,8 +276,6 @@ app/packages/users:
     violations:
     - dependency
     files:
-    - app/jobs/background_inactive_email_job.rb
-    - app/jobs/send_daily_triage_email_job.rb
     - lib/tasks/schedule.rake
     - test/functional/user_mailer_test.rb
     - test/mailers/previews/user_preview.rb

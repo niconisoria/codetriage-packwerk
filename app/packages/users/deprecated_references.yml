@@ -5,19 +5,24 @@
 #
 # bin/packwerk update-deprecations app/packages/users
 ---
-".":
-  "::ApplicationController":
-    violations:
-    - dependency
-    files:
-    - app/packages/users/controllers/users_controller.rb
 app/packages/docs:
   "::DocMailerMaker":
     violations:
     - dependency
     files:
+    - app/packages/users/jobs/send_daily_triage_email_job.rb
     - app/packages/users/models/user.rb
+  "::DocMethod::NeedsDocs":
+    violations:
+    - dependency
+    files:
+    - app/packages/users/views/user_mailer/send_daily_triage.md.erb
 app/packages/github_fetchers:
+  "::GithubFetcher::Email":
+    violations:
+    - dependency
+    files:
+    - app/packages/users/services/git_hub_authenticator.rb
   "::GithubFetcher::Repos":
     violations:
     - dependency
@@ -65,6 +70,18 @@ app/packages/mail_builders:
     - dependency
     files:
     - app/packages/users/mailers/user_mailer.rb
+app/packages/rails:
+  "::ApplicationController":
+    violations:
+    - dependency
+    files:
+    - app/packages/users/controllers/users/after_signup_controller.rb
+    - app/packages/users/controllers/users_controller.rb
+  "::ApplicationJob":
+    violations:
+    - dependency
+    files:
+    - app/packages/users/jobs/user_based_job.rb
 app/packages/repos:
   "::Repo":
     violations:

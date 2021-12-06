@@ -5,12 +5,6 @@
 #
 # bin/packwerk update-deprecations app/packages/docs
 ---
-".":
-  "::ApplicationController":
-    violations:
-    - dependency
-    files:
-    - app/packages/docs/controllers/doc_methods_controller.rb
 app/packages/github_fetchers:
   "::GitBranchnameGenerator":
     violations:
@@ -22,6 +16,12 @@ app/packages/github_fetchers:
     - dependency
     files:
     - app/packages/docs/models/doc_method.rb
+app/packages/rails:
+  "::ApplicationController":
+    violations:
+    - dependency
+    files:
+    - app/packages/docs/controllers/doc_methods_controller.rb
 app/packages/repos:
   "::Repo":
     violations:
