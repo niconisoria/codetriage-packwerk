@@ -1,2 +1,6 @@
 enforce_privacy: false
 enforce_dependencies: true
+dependencies:
+- app/packages/docs
+- app/packages/issues
+- app/packages/repos
