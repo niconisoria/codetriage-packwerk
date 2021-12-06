@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  append_view_path(Dir.glob(Rails.root.join('app/packages/*/views')))
+
   include ActionView::Helpers::NumberHelper
   protect_from_forgery
 

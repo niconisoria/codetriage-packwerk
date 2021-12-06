@@ -25,6 +25,10 @@ module CodeTriage
 
     config.force_ssl = ENV["APPLICATION_HOST"]
     config.middleware.insert_after ActionDispatch::SSL, Rack::CanonicalHost, ENV["APPLICATION_HOST"] if ENV["APPLICATION_HOST"]
+
+    # Set Packwerk packages paths
+    config.paths.add 'app/packages', glob: '*/{*,*/concerns}', eager_load:true
+
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.

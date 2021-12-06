@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-require_relative '../../lib/sorted_repo_collection'
 
 class SortedRepoCollectionTest < ActiveSupport::TestCase
   test "yields repos sorted by full_name, case-insensitive" do
