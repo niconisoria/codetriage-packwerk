@@ -23,6 +23,7 @@ load_paths:
 
 # Docs
 - app/packages/docs/controllers
+- app/packages/docs/deprecated_references.yml
 - app/packages/docs/models
 - app/packages/docs/package.yml
 - app/packages/docs/views
@@ -33,6 +34,7 @@ load_paths:
 
 # Issues
 - app/packages/issues/controllers
+- app/packages/issues/deprecated_references.yml
 - app/packages/issues/models
 - app/packages/issues/package.yml
 
@@ -42,6 +44,8 @@ load_paths:
 
 # Repos
 - app/packages/repos/controllers
+- app/packages/repos/deprecated_references.yml
+- app/packages/repos/helpers
 - app/packages/repos/jobs
 - app/packages/repos/lib
 - app/packages/repos/models
@@ -50,6 +54,9 @@ load_paths:
 
 # Users
 - app/packages/users/controllers
+- app/packages/users/deprecated_references.yml
+- app/packages/users/helpers
+- app/packages/users/jobs
 - app/packages/users/mailers
 - app/packages/users/models
 - app/packages/users/package.yml

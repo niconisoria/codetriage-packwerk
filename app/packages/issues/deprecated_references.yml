@@ -1,0 +1,47 @@
+# This file contains a list of dependencies that are not part of the long term plan for app/packages/issues.
+# We should generally work to reduce this list, but not at the expense of actually getting work done.
+#
+# You can regenerate this file using the following command:
+#
+# bin/packwerk update-deprecations app/packages/issues
+---
+".":
+  "::ApplicationController":
+    violations:
+    - dependency
+    files:
+    - app/packages/issues/controllers/issue_assignments_controller.rb
+app/packages/github_fetchers:
+  "::GithubFetcher::Issue":
+    violations:
+    - dependency
+    files:
+    - app/packages/issues/models/issue.rb
+  "::GithubFetcher::IssueComments":
+    violations:
+    - dependency
+    files:
+    - app/packages/issues/models/issue.rb
+app/packages/repos:
+  "::Repo":
+    violations:
+    - dependency
+    files:
+    - app/packages/issues/models/issue.rb
+    - app/packages/issues/models/issue_assignment.rb
+  "::RepoSubscription":
+    violations:
+    - dependency
+    files:
+    - app/packages/issues/models/issue_assignment.rb
+  "::SendSingleTriageEmailJob":
+    violations:
+    - dependency
+    files:
+    - app/packages/issues/controllers/issue_assignments_controller.rb
+app/packages/users:
+  "::User":
+    violations:
+    - dependency
+    files:
+    - app/packages/issues/models/issue_assignment.rb

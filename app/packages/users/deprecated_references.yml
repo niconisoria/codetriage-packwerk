@@ -1,0 +1,79 @@
+# This file contains a list of dependencies that are not part of the long term plan for app/packages/users.
+# We should generally work to reduce this list, but not at the expense of actually getting work done.
+#
+# You can regenerate this file using the following command:
+#
+# bin/packwerk update-deprecations app/packages/users
+---
+".":
+  "::ApplicationController":
+    violations:
+    - dependency
+    files:
+    - app/packages/users/controllers/users_controller.rb
+app/packages/docs:
+  "::DocMailerMaker":
+    violations:
+    - dependency
+    files:
+    - app/packages/users/models/user.rb
+app/packages/github_fetchers:
+  "::GithubFetcher::Repos":
+    violations:
+    - dependency
+    files:
+    - app/packages/users/models/user.rb
+  "::GithubFetcher::Repos::OWNED":
+    violations:
+    - dependency
+    files:
+    - app/packages/users/models/user.rb
+  "::GithubFetcher::Repos::STARRED":
+    violations:
+    - dependency
+    files:
+    - app/packages/users/models/user.rb
+  "::GithubFetcher::Repos::SUBSCRIBED":
+    violations:
+    - dependency
+    files:
+    - app/packages/users/models/user.rb
+  "::GithubFetcher::User":
+    violations:
+    - dependency
+    files:
+    - app/packages/users/models/user.rb
+app/packages/issues:
+  "::Issue":
+    violations:
+    - dependency
+    files:
+    - app/packages/users/models/user.rb
+  "::IssueAssigner":
+    violations:
+    - dependency
+    files:
+    - app/packages/users/models/user.rb
+  "::IssueAssignment":
+    violations:
+    - dependency
+    files:
+    - app/packages/users/models/user.rb
+app/packages/mail_builders:
+  "::MailBuilder::GroupedIssuesDocs":
+    violations:
+    - dependency
+    files:
+    - app/packages/users/mailers/user_mailer.rb
+app/packages/repos:
+  "::Repo":
+    violations:
+    - dependency
+    files:
+    - app/packages/users/mailers/user_mailer.rb
+    - app/packages/users/models/user.rb
+  "::RepoSubscription":
+    violations:
+    - dependency
+    files:
+    - app/packages/users/models/user.rb

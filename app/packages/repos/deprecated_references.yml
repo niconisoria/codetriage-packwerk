@@ -1,0 +1,84 @@
+# This file contains a list of dependencies that are not part of the long term plan for app/packages/repos.
+# We should generally work to reduce this list, but not at the expense of actually getting work done.
+#
+# You can regenerate this file using the following command:
+#
+# bin/packwerk update-deprecations app/packages/repos
+---
+".":
+  "::ApplicationController":
+    violations:
+    - dependency
+    files:
+    - app/packages/repos/controllers/repo_based_controller.rb
+    - app/packages/repos/controllers/repo_subscriptions_controller.rb
+  "::ApplicationJob":
+    violations:
+    - dependency
+    files:
+    - app/packages/repos/jobs/repo_based_job.rb
+    - app/packages/repos/jobs/send_single_triage_email_job.rb
+    - app/packages/repos/jobs/update_repo_info_job.rb
+app/packages/docs:
+  "::DocAssignment":
+    violations:
+    - dependency
+    files:
+    - app/packages/repos/models/repo_subscription.rb
+  "::DocClass":
+    violations:
+    - dependency
+    files:
+    - app/packages/repos/models/repo.rb
+  "::DocMethod":
+    violations:
+    - dependency
+    files:
+    - app/packages/repos/models/repo.rb
+    - app/packages/repos/models/repo_subscription.rb
+app/packages/github_fetchers:
+  "::GithubFetcher::CommitSha":
+    violations:
+    - dependency
+    files:
+    - app/packages/repos/models/repo.rb
+  "::GithubFetcher::Issues":
+    violations:
+    - dependency
+    files:
+    - app/packages/repos/models/repo.rb
+  "::GithubFetcher::Repo":
+    violations:
+    - dependency
+    files:
+    - app/packages/repos/models/repo.rb
+app/packages/issues:
+  "::Issue":
+    violations:
+    - dependency
+    files:
+    - app/packages/repos/jobs/populate_issues_job.rb
+    - app/packages/repos/models/repo.rb
+    - app/packages/repos/models/repo_subscription.rb
+  "::IssueAssigner":
+    violations:
+    - dependency
+    files:
+    - app/packages/repos/jobs/send_single_triage_email_job.rb
+  "::IssueAssignment":
+    violations:
+    - dependency
+    files:
+    - app/packages/repos/models/repo_subscription.rb
+app/packages/users:
+  "::User":
+    violations:
+    - dependency
+    files:
+    - app/packages/repos/models/repo.rb
+    - app/packages/repos/models/repo_subscription.rb
+  "::UserMailer":
+    violations:
+    - dependency
+    files:
+    - app/packages/repos/jobs/send_single_triage_email_job.rb
