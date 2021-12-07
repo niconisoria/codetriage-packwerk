@@ -1,5 +1,6 @@
 enforce_privacy: false
 enforce_dependencies: true
 dependencies:
+- app/packages/docs
 - app/packages/github_fetchers
 - app/packages/rails

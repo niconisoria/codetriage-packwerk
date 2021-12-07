@@ -21,6 +21,7 @@ app/packages/issues:
     - dependency
     files:
     - app/packages/users/models/user.rb
+    - app/packages/users/test/jobs/send_daily_triage_email_job_test.rb
 app/packages/repos:
   "::Repo":
     violations:
@@ -28,8 +29,15 @@ app/packages/repos:
     files:
     - app/packages/users/mailers/user_mailer.rb
     - app/packages/users/models/user.rb
+    - app/packages/users/test/functional/user_mailer_test.rb
+    - app/packages/users/test/unit/user_test.rb
   "::RepoSubscription":
     violations:
     - dependency
     files:
     - app/packages/users/models/user.rb
+  "::SendSingleTriageEmailJob":
+    violations:
+    - dependency
+    files:
+    - app/packages/users/test/jobs/send_daily_triage_email_test.rb

@@ -12,11 +12,15 @@ app/packages/repos:
     files:
     - app/packages/issues/models/issue.rb
     - app/packages/issues/models/issue_assignment.rb
+    - app/packages/issues/test/mailers/previews/user_preview.rb
+    - app/packages/issues/test/unit/issue_assignment_test.rb
+    - app/packages/issues/test/unit/issue_test.rb
   "::RepoSubscription":
     violations:
     - dependency
     files:
     - app/packages/issues/models/issue_assignment.rb
+    - app/packages/issues/test/mailers/previews/user_preview.rb
   "::SendSingleTriageEmailJob":
     violations:
     - dependency
@@ -28,3 +32,9 @@ app/packages/users:
     - dependency
     files:
     - app/packages/issues/models/issue_assignment.rb
+    - app/packages/issues/test/mailers/previews/user_preview.rb
+  "::UserMailer":
+    violations:
+    - dependency
+    files:
+    - app/packages/issues/test/mailers/previews/user_preview.rb

@@ -6,8 +6,9 @@
 # - "**/*.{rb,rake,erb}"
 
 # List of patterns for folder paths to exclude
-# exclude:
-# - "{bin,node_modules,script,tmp,vendor}/**/*"
+exclude:
+- "{bin,node_modules,script,tmp,vendor,lib,db,config,perf_scripts}/**/*"
+- "lib/tasks/**/*.rake"
 
 # Patterns to find package configuration files
 # package_paths: "**/"
@@ -20,6 +21,7 @@ load_paths:
 # Docs
 - app/packages/docs/controllers
 - app/packages/docs/deprecated_references.yml
+- app/packages/docs/lib
 - app/packages/docs/models
 - app/packages/docs/package.yml
 - app/packages/docs/views
@@ -27,16 +29,19 @@ load_paths:
 # GithubFetchers
 - app/packages/github_fetchers/models
 - app/packages/github_fetchers/package.yml
+- app/packages/github_fetchers/test
 
 # Issues
 - app/packages/issues/controllers
 - app/packages/issues/deprecated_references.yml
 - app/packages/issues/models
 - app/packages/issues/package.yml
+- app/packages/issues/test
 
 # MailBuilders
 - app/packages/mail_builders/models
 - app/packages/mail_builders/package.yml
+- app/packages/mail_builders/test
 
 # Rails
 - app/packages/rails/controllers
@@ -53,6 +58,7 @@ load_paths:
 - app/packages/repos/lib
 - app/packages/repos/models
 - app/packages/repos/package.yml
+- app/packages/repos/test
 - app/packages/repos/views
 
 # Users
@@ -64,6 +70,7 @@ load_paths:
 - app/packages/users/models
 - app/packages/users/package.yml
 - app/packages/users/services
+- app/packages/users/test
 - app/packages/users/views
 
 # List of custom associations, if any

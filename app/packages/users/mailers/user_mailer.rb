@@ -2,6 +2,7 @@
 
 class UserMailer < ActionMailer::Base
   include ActionView::Helpers::DateHelper
+  append_view_path(Dir.glob(Rails.root.join('app/packages/*/views')))
   default from: "CodeTriage <noreply@codetriage.com>"
 
   layout "mail_layout"
