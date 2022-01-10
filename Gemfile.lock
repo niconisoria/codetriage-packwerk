@@ -131,7 +131,7 @@ GEM
       smart_properties
     bindex (0.8.1)
     bluecloth (2.2.0)
-    bootsnap (1.9.1)
+    bootsnap (1.9.4)
       msgpack (~> 1.0)
     bourbon (7.0.0)
       thor (~> 1.0)
