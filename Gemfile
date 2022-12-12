@@ -98,7 +98,7 @@ gem 'sprockets-rails'
 
 gem 'babel-transpiler'
 
-gem 'scout_apm', '~> 4.1.2'
+gem 'scout_apm', '~> 5.3.3'
 gem 'yard', '~> 0.9.26'
 
 gem 'oj'
